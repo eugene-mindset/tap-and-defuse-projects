@@ -124,4 +124,4 @@ class Match:
         return self.id_num
 
     def __repr__(self):
-        return 'Tournament {0} '.format(self.id_num)
+        return 'Tournament {0} Match {1} | {2}'.format(self.event_id, self.id_num, self.player_stats)

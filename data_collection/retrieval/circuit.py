@@ -71,7 +71,6 @@ class CircuitScrapper:
             tourn_tqdm.set_description('Retreiving Matches for {0}'.format(tourn_name))
             tourn_tqdm.refresh()
             self._fetch_matches_from_tournament(tourn_id)
-            sleep(3.0)
 
         match_tqdm = tqdm(self._matches.values(), desc='Retrieve Necesscary Match Info')
         for match in match_tqdm:
@@ -88,7 +87,7 @@ class CircuitScrapper:
 
         return self._matches
 
-    def _fetch_matches_from_tournament(self, tourn_id: str) -> dict[str, Match]:
+    def _fetch_matches_from_tournament(self, tourn_id: str):
         """
         """
         tourn_url = VLR_URL + VLR_EVENT_MATCHES_URL.format(tourn_id)
@@ -114,8 +113,6 @@ class CircuitScrapper:
                     new_match.completed = True
 
                 self._matches[new_match.id_num] = new_match
-
-        return self._matches
 
     def _parse_team_btn(self, team_btn: BSTag) -> str:
         team_url = team_btn.get('href')
