@@ -3,7 +3,7 @@
 from pathlib import Path
 
 HOME_DIR = Path('.').resolve()
-OUTPUT_DATA_DIR = HOME_DIR / 'out/data'
+OUTPUT_DATA_DIR = HOME_DIR / 'out'
 
 VLR_URL = 'https://vlr.gg'
 
